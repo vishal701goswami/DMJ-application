@@ -1,6 +1,9 @@
 import 'package:diwamjewells/color/app_componet_color.dart';
+import 'package:diwamjewells/screen/Address/My_address.dart';
 import 'package:diwamjewells/screen/Coupon.dart';
 import 'package:diwamjewells/screen/My_card.dart';
+import 'package:diwamjewells/screen/Order_sub/My_oder.dart';
+import 'package:diwamjewells/screen/Order_sub/Review_pages/review_page.dart';
 import 'package:diwamjewells/screen/Wishlist.dart';
 import 'package:diwamjewells/screen/edit_profile.dart';
 import 'package:diwamjewells/screen/help_center/Help_Center.dart';
@@ -248,7 +251,7 @@ class _AccountState extends State<Account> with SingleTickerProviderStateMixin {
                                           context,
                                           CupertinoPageRoute(
                                               builder: (context) =>
-                                                  const My_card()));
+                                                  const My_oders()));
                                     },
                                     child: Container(
                                       height: 40,
@@ -431,23 +434,32 @@ class _AccountState extends State<Account> with SingleTickerProviderStateMixin {
                           color: Color.fromARGB(255, 97, 97, 97),
                         ),
                       ),
-                      ListTile(
-                        leading: const Icon(
-                          Icons.location_on_outlined,
-                          size: 22,
-                          color: Color.fromARGB(255, 29, 25, 245),
-                        ),
-                        title: Text(
-                          'Saved Addresses',
-                          style: GoogleFonts.montserrat(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black),
-                        ),
-                        trailing: const Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          size: 15,
-                          color: Color.fromARGB(255, 97, 97, 97),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                builder: (context) => const My_Address(),
+                              ));
+                        },
+                        child: ListTile(
+                          leading: const Icon(
+                            Icons.location_on_outlined,
+                            size: 22,
+                            color: Color.fromARGB(255, 29, 25, 245),
+                          ),
+                          title: Text(
+                            'Saved Addresses',
+                            style: GoogleFonts.montserrat(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            size: 15,
+                            color: Color.fromARGB(255, 97, 97, 97),
+                          ),
                         ),
                       ),
                     ],
@@ -478,23 +490,32 @@ class _AccountState extends State<Account> with SingleTickerProviderStateMixin {
                               color: Colors.black),
                         ),
                       ),
-                      ListTile(
-                        leading: const Icon(
-                          Icons.rate_review_sharp,
-                          size: 22,
-                          color: Color.fromARGB(255, 29, 25, 245),
-                        ),
-                        title: Text(
-                          'Reviews',
-                          style: GoogleFonts.montserrat(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black),
-                        ),
-                        trailing: const Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          size: 15,
-                          color: Color.fromARGB(255, 97, 97, 97),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                builder: (context) => Review_page(),
+                              ));
+                        },
+                        child: ListTile(
+                          leading: const Icon(
+                            Icons.rate_review_sharp,
+                            size: 22,
+                            color: Color.fromARGB(255, 29, 25, 245),
+                          ),
+                          title: Text(
+                            'Reviews',
+                            style: GoogleFonts.montserrat(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            size: 15,
+                            color: Color.fromARGB(255, 97, 97, 97),
+                          ),
                         ),
                       ),
                       ListTile(

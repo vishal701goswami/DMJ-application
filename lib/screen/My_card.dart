@@ -1,4 +1,5 @@
 import 'package:diwamjewells/color/app_componet_color.dart';
+import 'package:diwamjewells/screen/Address/Add_address.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -89,20 +90,30 @@ class _My_cardState extends State<My_card> {
                     Expanded(
                         child: Padding(
                       padding: const EdgeInsets.only(top: 20, right: 8),
-                      child: Container(
-                        height: 35,
-                        width: 5,
-                        decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 255, 255, 255),
-                            borderRadius: BorderRadius.circular(5),
-                            border: Border.all(
-                                color: const Color.fromARGB(255, 214, 214, 214),
-                                width: 3)),
-                        child: const Center(
-                            child: Text(
-                          "Change",
-                          style: TextStyle(color: Colors.blue),
-                        )),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                builder: (context) => Add_address(),
+                              ));
+                        },
+                        child: Container(
+                          height: 35,
+                          width: 5,
+                          decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 255, 255, 255),
+                              borderRadius: BorderRadius.circular(5),
+                              border: Border.all(
+                                  color:
+                                      const Color.fromARGB(255, 214, 214, 214),
+                                  width: 3)),
+                          child: const Center(
+                              child: Text(
+                            "Change",
+                            style: TextStyle(color: Colors.blue),
+                          )),
+                        ),
                       ),
                     )),
                   ],

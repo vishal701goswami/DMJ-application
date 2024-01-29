@@ -52,36 +52,36 @@ class _My_AddressState extends State<My_Address> {
                   height: 70,
                   width: double.infinity,
                   color: const Color.fromARGB(255, 255, 255, 255),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
+                  child: InkWell(
+                    onTap: () => Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => const Add_address())),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                            child: Padding(
+                                padding: EdgeInsets.only(left: 7, top: 20),
+                                child: Icon(
+                                  Icons.add,
+                                  color: Color.fromARGB(255, 12, 80, 228),
+                                ))),
+                        Expanded(
+                          flex: 6,
                           child: Padding(
-                        padding: const EdgeInsets.only(left: 7, top: 20),
-                        child: InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                    builder: (context) => const Add_address())),
-                            child: const Icon(
-                              Icons.add,
-                              color: Color.fromARGB(255, 12, 80, 228),
-                            )),
-                      )),
-                      const Expanded(
-                        flex: 6,
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 7, top: 21),
-                          child: Text(
-                            "Add a now address",
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Color.fromARGB(255, 12, 80, 228)),
+                            padding: EdgeInsets.only(left: 7, top: 21),
+                            child: Text(
+                              "Add a now address",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: Color.fromARGB(255, 12, 80, 228)),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 const Padding(
